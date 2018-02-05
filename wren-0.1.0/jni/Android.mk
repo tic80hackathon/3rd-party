@@ -5,9 +5,9 @@ include $(CLEAR_VARS)
 VM_PATH := ../src/vm
 OPT_PATH := ../src/optional
 
-LOCAL_C_INCLUDES := ../src/include
-LOCAL_C_INCLUDES += ../src/vm
-LOCAL_C_INCLUDES += ../src/optional
+LOCAL_C_INCLUDES := src/include
+LOCAL_C_INCLUDES += src/vm
+LOCAL_C_INCLUDES += src/optional
 
 LOCAL_ARM_MODE  := arm
 LOCAL_CFLAGS    := -DWREN_OPT_META -DWREN_OPT_RANDOM
