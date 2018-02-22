@@ -5,6 +5,7 @@ RANLIB= ranlib
 
 INCLUDES = \
 	-I../../include \
+	-I../../src/externals/glew \
 	-I../../src/externals/glew/GL \
 	-I../../src/externals/stb_image \
 	-I../../src/externals/stb_image_write \
