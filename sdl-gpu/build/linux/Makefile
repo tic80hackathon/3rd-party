@@ -1,5 +1,5 @@
 CC=gcc
-OPT=-O3 -DGLEW_STATIC -DSDL_GPU_DISABLE_GLES
+SDL_GPU_OPT=-O3 -DGLEW_STATIC -DSDL_GPU_DISABLE_GLES
 AR= ar rcu
 RANLIB= ranlib
 
@@ -16,49 +16,49 @@ SDL2_GPU_A = libsdlgpu.a
 all: $(SDL2_GPU_A)
 
 renderer_GLES_1.o: ../../src/renderer_GLES_1.c
-	$(CC) $< $(OPT) $(INCLUDES) -c -o $@
+	$(CC) $< $(SDL_GPU_OPT) $(INCLUDES) -c -o $@
 
 renderer_GLES_2.o: ../../src/renderer_GLES_2.c
-	$(CC) $< $(OPT) $(INCLUDES) -c -o $@
+	$(CC) $< $(SDL_GPU_OPT) $(INCLUDES) -c -o $@
 
 renderer_GLES_3.o: ../../src/renderer_GLES_3.c
-	$(CC) $< $(OPT) $(INCLUDES) -c -o $@
+	$(CC) $< $(SDL_GPU_OPT) $(INCLUDES) -c -o $@
 
 renderer_OpenGL_1.o: ../../src/renderer_OpenGL_1.c
-	$(CC) $< $(OPT) $(INCLUDES) -c -o $@
+	$(CC) $< $(SDL_GPU_OPT) $(INCLUDES) -c -o $@
 
 renderer_OpenGL_1_BASE.o: ../../src/renderer_OpenGL_1_BASE.c
-	$(CC) $< $(OPT) $(INCLUDES) -c -o $@
+	$(CC) $< $(SDL_GPU_OPT) $(INCLUDES) -c -o $@
 
 renderer_OpenGL_2.o: ../../src/renderer_OpenGL_2.c
-	$(CC) $< $(OPT) $(INCLUDES) -c -o $@
+	$(CC) $< $(SDL_GPU_OPT) $(INCLUDES) -c -o $@
 
 renderer_OpenGL_3.o: ../../src/renderer_OpenGL_3.c
-	$(CC) $< $(OPT) $(INCLUDES) -c -o $@
+	$(CC) $< $(SDL_GPU_OPT) $(INCLUDES) -c -o $@
 
 renderer_OpenGL_4.o: ../../src/renderer_OpenGL_4.c
-	$(CC) $< $(OPT) $(INCLUDES) -c -o $@
+	$(CC) $< $(SDL_GPU_OPT) $(INCLUDES) -c -o $@
 
 SDL_gpu.o: ../../src/SDL_gpu.c
-	$(CC) $< $(OPT) $(INCLUDES) -c -o $@
+	$(CC) $< $(SDL_GPU_OPT) $(INCLUDES) -c -o $@
 
 SDL_gpu_matrix.o: ../../src/SDL_gpu_matrix.c
-	$(CC) $< $(OPT) $(INCLUDES) -c -o $@
+	$(CC) $< $(SDL_GPU_OPT) $(INCLUDES) -c -o $@
 
 SDL_gpu_renderer.o: ../../src/SDL_gpu_renderer.c
-	$(CC) $< $(OPT) $(INCLUDES) -c -o $@
+	$(CC) $< $(SDL_GPU_OPT) $(INCLUDES) -c -o $@
 
 SDL_gpu_shapes.o: ../../src/SDL_gpu_shapes.c
-	$(CC) $< $(OPT) $(INCLUDES) -c -o $@
+	$(CC) $< $(SDL_GPU_OPT) $(INCLUDES) -c -o $@
 
 glew.o: ../../src/externals/glew/glew.c
-	$(CC) $< $(OPT) $(INCLUDES) -c -o $@
+	$(CC) $< $(SDL_GPU_OPT) $(INCLUDES) -c -o $@
 
 stb_image.o: ../../src/externals/stb_image/stb_image.c
-	$(CC) $< $(OPT) $(INCLUDES) -c -o $@
+	$(CC) $< $(SDL_GPU_OPT) $(INCLUDES) -c -o $@
 
 stb_image_write.o: ../../src/externals/stb_image_write/stb_image_write.c
-	$(CC) $< $(OPT) $(INCLUDES) -c -o $@
+	$(CC) $< $(SDL_GPU_OPT) $(INCLUDES) -c -o $@
 
 OBJS = \
 	renderer_GLES_1.o \
