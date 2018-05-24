@@ -9,4 +9,4 @@ fennel.lua: fennel_original.lua
 fennel_original.lua:
 	cp ../../fennel/fennel.lua $@
 
-update: ; fennel_original.lua
+update: fennel_original.lua
