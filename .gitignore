@@ -6,3 +6,6 @@ SDL2-2.0.7/Makefile
 zlib-1.2.11/CMakeFiles/
 zlib-1.2.11/zlib.pc
 *.cmake
+*.tlog
+*.obj
+*.filters
