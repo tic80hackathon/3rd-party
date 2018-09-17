@@ -205,7 +205,7 @@ static void remove_samples( blip_t* m, int count )
 	memset( &buf [remain], 0, count * sizeof buf [0] );
 }
 
-int blip_read_samples( blip_t* m, short out [], int count, int left, int right)
+int blip_read_samples( blip_t* m, short out [], int count, int channels)
 {
 	assert( count >= 0 );
 	
@@ -226,8 +226,8 @@ int blip_read_samples( blip_t* m, short out [], int count, int left, int right)
 			
 			CLAMP( s );
 			
-			*out++ = left ? s : 0;
-			*out++ = right ? s : 0;
+			*out = s;
+			out += channels;
 			
 			/* High-pass filter */
 			sum -= s << (delta_bits - bass_shift);
