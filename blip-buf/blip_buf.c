@@ -205,7 +205,7 @@ static void remove_samples( blip_t* m, int count )
 	memset( &buf [remain], 0, count * sizeof buf [0] );
 }
 
-int blip_read_samples( blip_t* m, short out [], int count, int stereo )
+int blip_read_samples( blip_t* m, short out [], int count, int channels)
 {
 	assert( count >= 0 );
 	
@@ -214,7 +214,6 @@ int blip_read_samples( blip_t* m, short out [], int count, int stereo )
 	
 	if ( count )
 	{
-		int const step = stereo ? 2 : 1;
 		buf_t const* in  = SAMPLES( m );
 		buf_t const* end = in + count;
 		int sum = m->integrator;
@@ -228,7 +227,7 @@ int blip_read_samples( blip_t* m, short out [], int count, int stereo )
 			CLAMP( s );
 			
 			*out = s;
-			out += step;
+			out += channels;
 			
 			/* High-pass filter */
 			sum -= s << (delta_bits - bass_shift);
